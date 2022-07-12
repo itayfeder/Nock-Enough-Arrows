@@ -1,0 +1,21 @@
+{ 
+	"type": "apotheosis:fletching", 
+	"conditions": [{
+		"type": "apotheosis:module",
+		"module": "village"
+	}], 
+	"ingredients": [{ 
+			"item": "minecraft:echo_shard" 
+		}, 
+		{ 
+			"item": "minecraft:stick" 
+		}, 
+		{ 
+			"item": "minecraft:feather" 
+		} 
+	], 
+	"result": { 
+		"item": "nock_enough_arrows:echoing_arrow", 
+		"count": 2 
+	} 
+}

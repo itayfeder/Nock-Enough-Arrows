@@ -1,0 +1,16 @@
+{
+  "type": "nock_enough_arrows:fletching",
+  "arrowhead": {
+    "item": "minecraft:water_bucket"
+  },
+  "fletching": {
+    "item": "minecraft:feather"
+  },
+  "result": {
+    "count": 3,
+    "item": "nock_enough_arrows:dousing_arrow"
+  },
+  "shaft": {
+    "item": "minecraft:stick"
+  }
+}

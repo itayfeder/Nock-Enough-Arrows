@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "nock_enough_arrows:torch_arrow"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_torch": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:torch"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_torch",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "nock_enough_arrows:torch_arrow"
+    ]
+  }
+}

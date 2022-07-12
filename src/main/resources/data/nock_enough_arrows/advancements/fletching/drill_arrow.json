@@ -1,0 +1,37 @@
+{
+  "parent": "nock_enough_arrows:fletching/root",
+  "display": {
+    "icon": {
+      "item": "nock_enough_arrows:drill_arrow"
+    },
+    "title": {
+      "translate": "advancements.fletching.drill_arrow.title"
+    },
+    "description": {
+      "translate": "advancements.fletching.drill_arrow.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "arrow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "nock_enough_arrows:drill_arrow"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "arrow"
+    ]
+  ]
+}

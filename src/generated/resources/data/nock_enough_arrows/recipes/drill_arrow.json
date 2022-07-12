@@ -1,0 +1,16 @@
+{
+  "type": "nock_enough_arrows:fletching",
+  "arrowhead": {
+    "item": "minecraft:iron_pickaxe"
+  },
+  "fletching": {
+    "item": "minecraft:feather"
+  },
+  "result": {
+    "count": 24,
+    "item": "nock_enough_arrows:drill_arrow"
+  },
+  "shaft": {
+    "item": "minecraft:stick"
+  }
+}

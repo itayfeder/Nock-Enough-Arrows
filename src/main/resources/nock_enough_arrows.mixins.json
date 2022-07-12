@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.itayfeder.nock_enough_arrows.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "nock_enough_arrows.refmap.json",
+  "mixins": [
+    "PlayerMixin",
+    "FletchingTableMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

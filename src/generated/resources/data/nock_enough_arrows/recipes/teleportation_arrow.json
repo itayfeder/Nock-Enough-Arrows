@@ -1,0 +1,16 @@
+{
+  "type": "nock_enough_arrows:fletching",
+  "arrowhead": {
+    "item": "minecraft:ender_pearl"
+  },
+  "fletching": {
+    "item": "minecraft:feather"
+  },
+  "result": {
+    "count": 1,
+    "item": "nock_enough_arrows:teleportation_arrow"
+  },
+  "shaft": {
+    "item": "minecraft:stick"
+  }
+}

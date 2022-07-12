@@ -1,0 +1,16 @@
+{
+  "type": "nock_enough_arrows:fletching",
+  "arrowhead": {
+    "item": "minecraft:bone_meal"
+  },
+  "fletching": {
+    "item": "minecraft:feather"
+  },
+  "result": {
+    "count": 1,
+    "item": "nock_enough_arrows:blossom_arrow"
+  },
+  "shaft": {
+    "item": "minecraft:stick"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "nock_enough_arrows:fletching",
+  "arrowhead": {
+    "item": "minecraft:flint"
+  },
+  "fletching": {
+    "item": "minecraft:feather"
+  },
+  "result": {
+    "count": 4,
+    "item": "minecraft:arrow"
+  },
+  "shaft": {
+    "item": "minecraft:stick"
+  }
+}
