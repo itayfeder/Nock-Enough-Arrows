@@ -1,5 +1,6 @@
 package com.itayfeder.nock_enough_arrows.network;
 
+import com.itayfeder.nock_enough_arrows.compat.CuriosCompat;
 import com.itayfeder.nock_enough_arrows.init.ItemInit;
 import com.itayfeder.nock_enough_arrows.quiver.QuiverItem;
 import com.itayfeder.nock_enough_arrows.quiver.QuiverItemStackHandler;
@@ -8,8 +9,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.network.NetworkEvent;
-import org.apache.commons.lang3.tuple.ImmutableTriple;
-import top.theillusivec4.curios.api.CuriosApi;
 
 import java.util.Optional;
 import java.util.function.Supplier;
@@ -32,10 +31,7 @@ public class QuiverSwitchSelectionMessage {
             ItemStack usedQuiver = null;
             Player player = context.getSender();
             if (ModList.get().isLoaded("curios")) {
-                Optional<ImmutableTriple<String, Integer, ItemStack>> triplet = CuriosApi.getCuriosHelper().findEquippedCurio(ItemInit.QUIVER.get(), player);
-                if (!triplet.isEmpty()) {
-                    usedQuiver = triplet.get().getRight();
-                }
+                usedQuiver = CuriosCompat.getQuiver(player);
             }
             for(int i = 0; i < player.getInventory().getContainerSize() && usedQuiver == null; ++i) {
                 ItemStack itemstack1 = player.getInventory().getItem(i);
