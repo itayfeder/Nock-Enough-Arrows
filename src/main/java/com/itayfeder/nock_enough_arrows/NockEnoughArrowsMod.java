@@ -1,5 +1,6 @@
 package com.itayfeder.nock_enough_arrows;
 
+import com.itayfeder.nock_enough_arrows.compat.CuriosCompat;
 import com.itayfeder.nock_enough_arrows.data.ArcherRecipeProvider;
 import com.itayfeder.nock_enough_arrows.data.tags.ArcherBlockTagsProvider;
 import com.itayfeder.nock_enough_arrows.data.tags.ArcherItemTagsProvider;
@@ -18,6 +19,7 @@ import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -26,8 +28,6 @@ import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import org.slf4j.Logger;
-import top.theillusivec4.curios.api.SlotTypeMessage;
-import top.theillusivec4.curios.api.SlotTypePreset;
 
 import java.util.function.BiConsumer;
 import java.util.function.Function;
@@ -72,7 +72,9 @@ public class NockEnoughArrowsMod
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
-        InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().build());
+        if (ModList.get().isLoaded("curios")) {
+            CuriosCompat.InqueueIMC();
+        }
     }
 
     private void dataSetup(GatherDataEvent event) {
