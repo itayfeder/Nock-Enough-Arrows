@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "nock_enough_arrows:drill_arrow"
+    ]
+  },
+  "criteria": {
+    "has_iron_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_pickaxe"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "nock_enough_arrows:drill_arrow"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_iron_pickaxe",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "nock_enough_arrows:item/repulsive_arrow",
+        "layer1": "nock_enough_arrows:item/repulsive_arrow"
+    }
+}

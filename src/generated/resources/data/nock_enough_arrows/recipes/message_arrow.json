@@ -1,0 +1,16 @@
+{
+  "type": "nock_enough_arrows:fletching",
+  "fletching": {
+    "item": "minecraft:feather"
+  },
+  "shaft": {
+    "item": "minecraft:stick"
+  },
+  "arrowhead": {
+    "item": "minecraft:paper"
+  },
+  "result": {
+    "item": "nock_enough_arrows:message_arrow",
+    "count": 2
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "nock_enough_arrows:fletching",
+  "fletching": {
+    "item": "minecraft:feather"
+  },
+  "shaft": {
+    "item": "minecraft:stick"
+  },
+  "arrowhead": {
+    "item": "minecraft:slime_ball"
+  },
+  "result": {
+    "item": "nock_enough_arrows:slime_arrow",
+    "count": 2
+  }
+}

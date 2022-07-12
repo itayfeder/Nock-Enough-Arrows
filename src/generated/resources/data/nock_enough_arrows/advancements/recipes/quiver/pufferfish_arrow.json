@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "nock_enough_arrows:pufferfish_arrow"
+    ]
+  },
+  "criteria": {
+    "has_pufferfish": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:pufferfish"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "nock_enough_arrows:pufferfish_arrow"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pufferfish",
+      "has_the_recipe"
+    ]
+  ]
+}

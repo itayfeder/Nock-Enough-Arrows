@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "nock_enough_arrows:pufferfish_arrow",
+    "nock_enough_arrows:explosive_arrow",
+    "nock_enough_arrows:slime_arrow",
+    "nock_enough_arrows:prismarine_arrow",
+    "nock_enough_arrows:hookshot_arrow",
+    "nock_enough_arrows:message_arrow",
+    "nock_enough_arrows:teleportation_arrow",
+    "nock_enough_arrows:ink_arrow",
+    "nock_enough_arrows:torch_arrow",
+    "nock_enough_arrows:soul_torch_arrow",
+    "nock_enough_arrows:redstone_torch_arrow",
+    "nock_enough_arrows:ethereal_arrow",
+    "nock_enough_arrows:dousing_arrow",
+    "nock_enough_arrows:blossom_arrow",
+    "nock_enough_arrows:growing_arrow",
+    "nock_enough_arrows:drill_arrow",
+    "nock_enough_arrows:split_arrow",
+    "nock_enough_arrows:party_arrow",
+    "nock_enough_arrows:repulsive_arrow",
+    "nock_enough_arrows:echoing_arrow"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "nock_enough_arrows:fletching",
+  "fletching": {
+    "item": "minecraft:feather"
+  },
+  "shaft": {
+    "item": "minecraft:stick"
+  },
+  "arrowhead": {
+    "item": "minecraft:poisonous_potato"
+  },
+  "result": {
+    "item": "nock_enough_arrows:repulsive_arrow",
+    "count": 1
+  }
+}

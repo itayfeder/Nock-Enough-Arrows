@@ -1,0 +1,37 @@
+{
+  "parent": "nock_enough_arrows:fletching/root",
+  "display": {
+    "icon": {
+      "item": "nock_enough_arrows:quiver"
+    },
+    "title": {
+      "translate": "advancements.fletching.get_quiver.title"
+    },
+    "description": {
+      "translate": "advancements.fletching.get_quiver.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "quiver": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "nock_enough_arrows:quiver"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "quiver"
+    ]
+  ]
+}

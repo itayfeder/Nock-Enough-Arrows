@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "nock_enough_arrows:party_arrow"
+    ]
+  },
+  "criteria": {
+    "has_firework_rocket": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:firework_rocket"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "nock_enough_arrows:party_arrow"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_firework_rocket",
+      "has_the_recipe"
+    ]
+  ]
+}

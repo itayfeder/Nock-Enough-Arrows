@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "nock_enough_arrows:blossom_arrow"
+    ]
+  },
+  "criteria": {
+    "has_bone_meal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bone_meal"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "nock_enough_arrows:blossom_arrow"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bone_meal",
+      "has_the_recipe"
+    ]
+  ]
+}

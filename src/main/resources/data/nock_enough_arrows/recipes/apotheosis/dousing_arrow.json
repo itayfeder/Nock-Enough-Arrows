@@ -1,0 +1,21 @@
+{ 
+	"type": "apotheosis:fletching", 
+	"conditions": [{
+		"type": "apotheosis:module",
+		"module": "village"
+	}], 
+	"ingredients": [{ 
+			"item": "minecraft:water_bucket" 
+		}, 
+		{ 
+			"item": "minecraft:stick" 
+		}, 
+		{ 
+			"item": "minecraft:feather" 
+		} 
+	], 
+	"result": { 
+		"item": "nock_enough_arrows:dousing_arrow", 
+		"count": 3 
+	} 
+}

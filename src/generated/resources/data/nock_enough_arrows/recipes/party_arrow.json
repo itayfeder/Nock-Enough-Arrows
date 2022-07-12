@@ -1,0 +1,16 @@
+{
+  "type": "nock_enough_arrows:fletching",
+  "fletching": {
+    "item": "minecraft:feather"
+  },
+  "shaft": {
+    "item": "minecraft:stick"
+  },
+  "arrowhead": {
+    "item": "minecraft:firework_rocket"
+  },
+  "result": {
+    "item": "nock_enough_arrows:party_arrow",
+    "count": 2
+  }
+}
