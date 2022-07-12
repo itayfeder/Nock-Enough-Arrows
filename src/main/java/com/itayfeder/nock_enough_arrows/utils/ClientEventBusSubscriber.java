@@ -23,10 +23,14 @@ import com.itayfeder.nock_enough_arrows.arrows.teleportation.TeleportationArrowR
 import com.itayfeder.nock_enough_arrows.arrows.torch.TorchArrowRenderer;
 import com.itayfeder.nock_enough_arrows.fletching_table.FletchingTableScreen;
 import com.itayfeder.nock_enough_arrows.init.EntityTypeInit;
+import com.itayfeder.nock_enough_arrows.init.KeybindInit;
 import com.itayfeder.nock_enough_arrows.init.MenuInit;
+import com.itayfeder.nock_enough_arrows.quiver.tooltip.ClientQuiverTooltip;
+import com.itayfeder.nock_enough_arrows.quiver.tooltip.QuiverTooltip;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -57,6 +61,9 @@ public class ClientEventBusSubscriber {
         EntityRenderers.register(EntityTypeInit.ECHOING_ARROW.get(), EchoingArrowRenderer::new);
 
         MenuScreens.register(MenuInit.FLETCHING_TABLE.get(), FletchingTableScreen::new);
+
+        MinecraftForgeClient.registerTooltipComponentFactory(QuiverTooltip.class, ClientQuiverTooltip::new);
+        KeybindInit.init();
 
     }
 }

@@ -23,7 +23,7 @@ mixin {
     add sourceSets.main, "nock_enough_arrows.refmap.json"
 }
 
-version = '1.18.2-1.0.0'
+version = '1.18.2-1.0.1'
 group = 'com.itayfeder.nock_enough_arrows' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'nock_enough_arrows'
 
@@ -154,6 +154,10 @@ repositories {
     maven {
         url "https://www.cursemaven.com"
     }
+
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
 }
 
 dependencies {
@@ -163,6 +167,9 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.18.2-40.1.54'
 
     implementation fg.deobf("curse.maven:jei-238222:3723913")
+
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${version_curios}")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${version_curios}:api")
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency

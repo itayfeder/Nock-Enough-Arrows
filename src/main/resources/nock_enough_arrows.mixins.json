@@ -9,6 +9,7 @@
     "FletchingTableMixin"
   ],
   "client": [
+    "ItemRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
