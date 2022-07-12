@@ -23,13 +23,31 @@ import com.itayfeder.nock_enough_arrows.arrows.teleportation.TeleportationArrowR
 import com.itayfeder.nock_enough_arrows.arrows.torch.TorchArrowRenderer;
 import com.itayfeder.nock_enough_arrows.fletching_table.FletchingTableScreen;
 import com.itayfeder.nock_enough_arrows.init.EntityTypeInit;
+import com.itayfeder.nock_enough_arrows.init.ItemInit;
+import com.itayfeder.nock_enough_arrows.init.KeybindInit;
 import com.itayfeder.nock_enough_arrows.init.MenuInit;
+import com.itayfeder.nock_enough_arrows.quiver.QuiverItem;
+import com.itayfeder.nock_enough_arrows.quiver.QuiverItemStackHandler;
+import com.itayfeder.nock_enough_arrows.quiver.tooltip.ClientQuiverTooltip;
+import com.itayfeder.nock_enough_arrows.quiver.tooltip.QuiverTooltip;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.commons.lang3.tuple.ImmutableTriple;
+import top.theillusivec4.curios.api.CuriosApi;
+
+import java.util.Optional;
 
 @Mod.EventBusSubscriber(modid = NockEnoughArrowsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEventBusSubscriber {
@@ -57,6 +75,10 @@ public class ClientEventBusSubscriber {
         EntityRenderers.register(EntityTypeInit.ECHOING_ARROW.get(), EchoingArrowRenderer::new);
 
         MenuScreens.register(MenuInit.FLETCHING_TABLE.get(), FletchingTableScreen::new);
+    }
 
+    @SubscribeEvent
+    public static void onClientSetup(RegisterClientTooltipComponentFactoriesEvent event) {
+        event.register(QuiverTooltip.class, ClientQuiverTooltip::new);
     }
 }

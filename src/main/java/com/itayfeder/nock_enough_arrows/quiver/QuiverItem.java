@@ -1,10 +1,13 @@
 package com.itayfeder.nock_enough_arrows.quiver;
 
 import com.itayfeder.nock_enough_arrows.init.EnchantmentInit;
+import com.itayfeder.nock_enough_arrows.quiver.tooltip.QuiverTooltip;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
@@ -21,22 +24,27 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.tooltip.BundleTooltip;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
+import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class QuiverItem extends Item implements DyeableLeatherItem {
+public class QuiverItem extends Item implements DyeableLeatherItem, ICurioItem {
     private static final String TAG_ITEMS = "Items";
     public static final int MAX_WEIGHT = 64;
     private static final int BUNDLE_IN_BUNDLE_WEIGHT = 4;
     private static final int BAR_COLOR = Mth.color(0.4F, 0.4F, 1.0F);
+    public static final String SELECTED_ID = "Selected";
 
     public QuiverItem(Item.Properties p_150726_) {
         super(p_150726_);
@@ -49,7 +57,7 @@ public class QuiverItem extends Item implements DyeableLeatherItem {
             ItemStack itemstack = p_150734_.getItem();
             if (itemstack.isEmpty()) {
                 this.playRemoveOneSound(p_150736_);
-                p_150734_.set(removeOne(p_150733_).get());
+                removeOne(p_150733_).ifPresent((stack) -> p_150734_.set(stack));
             } else if (itemstack.getItem().canFitInsideContainerItems() && itemstack.is(ItemTags.ARROWS)) {
                 QuiverItemStackHandler handler = getQuiverItemStackHandler(p_150733_);
                 itemstack.setCount(handler.addStack(itemstack).getCount());
@@ -167,12 +175,11 @@ public class QuiverItem extends Item implements DyeableLeatherItem {
 
     private static Optional<ItemStack> removeOne(ItemStack p_150781_) {
         QuiverItemStackHandler handler = getQuiverItemStackHandler(p_150781_);
-        for (int i = 0; i < handler.getSlots(); i++) {
-            if (handler.getStackInSlot(i) != ItemStack.EMPTY) {
-                ItemStack firstStack = handler.getStackInSlot(i);
-                handler.extractItem(i, firstStack.getCount(), false);
-                return Optional.of(firstStack);
-            }
+        if (!handler.isAllAir()) {
+            int selected = QuiverItem.getSelected(p_150781_);
+            ItemStack firstStack = handler.getStackInSlot(selected);
+            handler.extractItem(selected, firstStack.getCount(), false);
+            return Optional.of(firstStack);
         }
         return Optional.empty();
     }
@@ -212,13 +219,16 @@ public class QuiverItem extends Item implements DyeableLeatherItem {
     public Optional<TooltipComponent> getTooltipImage(ItemStack p_150775_) {
         NonNullList<ItemStack> nonnulllist = NonNullList.create();
         getContents(p_150775_).forEach(nonnulllist::add);
-        return Optional.of(new BundleTooltip(nonnulllist, getContentWeight(p_150775_)));
+        return Optional.of(new QuiverTooltip(nonnulllist, getContentWeight(p_150775_), p_150775_));
     }
 
     public void appendHoverText(ItemStack p_150749_, Level p_150750_, List<Component> p_150751_, TooltipFlag p_150752_) {
         QuiverItemStackHandler handler = getQuiverItemStackHandler(p_150749_);
 
         p_150751_.add((Component.translatable("item.minecraft.bundle.fullness", getContentWeight(p_150749_), handler.getSlots())).withStyle(ChatFormatting.GRAY));
+        if (!handler.isAllAir()) {
+            p_150751_.add((Component.literal("Selected Arrow: " + I18n.get(handler.getItems().get(getSelected(p_150749_)).getDescriptionId(), new Object[0]))).withStyle(ChatFormatting.GRAY));
+        }
     }
 
 
@@ -243,33 +253,41 @@ public class QuiverItem extends Item implements DyeableLeatherItem {
     public void inventoryTick(ItemStack p_41404_, Level p_41405_, Entity p_41406_, int p_41407_, boolean p_41408_) {
         super.inventoryTick(p_41404_, p_41405_, p_41406_, p_41407_, p_41408_);
         QuiverItemStackHandler handler = getQuiverItemStackHandler(p_41404_);
-        int level = p_41404_.getEnchantmentLevel(EnchantmentInit.STOCKPILE.get());
-        if (handler.getSlots() != 5 + level) {
-            if (handler.getSlots() > 5 + level) {
-                List<ItemStack> stacks = handler.getItems();
-                handler.setSize(5 + level);
-                int i = 0;
-                for (i = 0; i < 5 + level; i++) {
-                    handler.addStack(stacks.get(i));
-                }
-                if (p_41406_ instanceof Player player) {
-                    for(int j = i; j < stacks.size(); j++) {
-                        ItemStack itemstack = stacks.get(j);
-                        player.drop(itemstack, true);
+
+        if (!handler.isAllAir() && handler.isAir(getSelected(p_41404_)))
+            setSelected(p_41404_, handler.getFirstFilledSlot());
+
+        if (p_41404_.getEnchantmentLevel(EnchantmentInit.STOCKPILE.get()) >= 1) {
+            int level = p_41404_.getEnchantmentLevel(EnchantmentInit.STOCKPILE.get());
+            if (handler.getSlots() != 5 + level) {
+                if (handler.getSlots() > 5 + level) {
+                    List<ItemStack> stacks = handler.getItems();
+                    handler.setSize(5 + level);
+                    int i = 0;
+                    for (i = 0; i < 5 + level; i++) {
+                        handler.addStack(stacks.get(i));
                     }
+                    if (p_41406_ instanceof Player player) {
+                        for(int j = i; j < stacks.size(); j++) {
+                            ItemStack itemstack = stacks.get(j);
+                            player.drop(itemstack, true);
+                        }
+                    }
+
+
                 }
-
-
-            }
-            else {
-                List<ItemStack> stacks = handler.getItems();
-                handler.setSize(5 + level);
-                for (ItemStack stack : stacks) {
-                    handler.addStack(stack);
+                else {
+                    List<ItemStack> stacks = handler.getItems();
+                    handler.setSize(5 + level);
+                    for (ItemStack stack : stacks) {
+                        handler.addStack(stack);
+                    }
                 }
             }
         }
     }
+
+
 
     @Override
     public boolean isEnchantable(ItemStack p_41456_) {
@@ -279,5 +297,15 @@ public class QuiverItem extends Item implements DyeableLeatherItem {
     @Override
     public int getEnchantmentValue() {
         return 5;
+    }
+
+    public static int getSelected(ItemStack stack) {
+        CompoundTag tag = stack.getOrCreateTag();
+        return tag.getInt(SELECTED_ID);
+    }
+
+    public static void setSelected(ItemStack stack, int id) {
+        CompoundTag tag = stack.getOrCreateTag();
+        tag.putInt(SELECTED_ID, id);
     }
 }

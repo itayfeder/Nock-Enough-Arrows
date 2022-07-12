@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class MenuInit {
 
-    public static final DeferredRegister<MenuType<?>> CONTAINER_TYPES = DeferredRegister.create(ForgeRegistries.CONTAINERS, NockEnoughArrowsMod.MOD_ID);
+    public static final DeferredRegister<MenuType<?>> CONTAINER_TYPES = DeferredRegister.create(ForgeRegistries.MENU_TYPES, NockEnoughArrowsMod.MOD_ID);
 
     public static final RegistryObject<MenuType<FletchingTableMenu>> FLETCHING_TABLE = CONTAINER_TYPES
             .register("fletching_table", () -> IForgeMenuType.create(FletchingTableMenu::new));

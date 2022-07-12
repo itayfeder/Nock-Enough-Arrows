@@ -29,7 +29,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class EntityTypeInit {
-    public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, NockEnoughArrowsMod.MOD_ID);
+    public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, NockEnoughArrowsMod.MOD_ID);
 
     public static final RegistryObject<EntityType<PufferfishArrow>> PUFFERFISH_ARROW = ENTITY_TYPES.register("pufferfish_arrow",
             () -> EntityType.Builder.<PufferfishArrow>of(PufferfishArrow::new, MobCategory.MISC)
