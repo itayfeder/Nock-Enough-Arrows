@@ -17,7 +17,7 @@ plugins {
 
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.19-1.0.1'
+version = '1.19-1.0.2'
 group = 'com.itayfeder.nock_enough_arrows' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'nock_enough_arrows'
 
