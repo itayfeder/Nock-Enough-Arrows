@@ -6,7 +6,8 @@
   "refmap": "nock_enough_arrows.refmap.json",
   "mixins": [
     "PlayerMixin",
-    "FletchingTableMixin"
+    "FletchingTableMixin",
+    "RecipeManagerMixin"
   ],
   "client": [
     "ItemRendererMixin"

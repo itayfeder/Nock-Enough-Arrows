@@ -1,4 +1,4 @@
-package com.itayfeder.nock_enough_arrows.compat;
+package com.itayfeder.nock_enough_arrows.compat.curios;
 
 import com.itayfeder.nock_enough_arrows.init.EnchantmentInit;
 import com.itayfeder.nock_enough_arrows.init.ItemInit;

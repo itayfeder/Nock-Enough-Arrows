@@ -1,6 +1,6 @@
 package com.itayfeder.nock_enough_arrows;
 
-import com.itayfeder.nock_enough_arrows.compat.CuriosCompat;
+import com.itayfeder.nock_enough_arrows.compat.curios.CuriosCompat;
 import com.itayfeder.nock_enough_arrows.data.ArcherRecipeProvider;
 import com.itayfeder.nock_enough_arrows.data.tags.ArcherBlockTagsProvider;
 import com.itayfeder.nock_enough_arrows.data.tags.ArcherItemTagsProvider;
@@ -18,7 +18,6 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;

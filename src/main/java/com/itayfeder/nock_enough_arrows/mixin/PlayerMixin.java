@@ -1,8 +1,7 @@
 package com.itayfeder.nock_enough_arrows.mixin;
 
-import com.itayfeder.nock_enough_arrows.compat.CuriosCompat;
+import com.itayfeder.nock_enough_arrows.compat.curios.CuriosCompat;
 import com.itayfeder.nock_enough_arrows.init.EnchantmentInit;
-import com.itayfeder.nock_enough_arrows.init.ItemInit;
 import com.itayfeder.nock_enough_arrows.quiver.QuiverItem;
 import com.itayfeder.nock_enough_arrows.quiver.QuiverItemStackHandler;
 import net.minecraft.core.BlockPos;
@@ -15,7 +14,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.ModList;
-import org.apache.commons.lang3.tuple.ImmutableTriple;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,7 +21,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import java.util.Optional;
 import java.util.Random;
 import java.util.function.Predicate;
 

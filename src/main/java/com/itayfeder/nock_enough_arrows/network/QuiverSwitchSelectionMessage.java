@@ -1,6 +1,6 @@
 package com.itayfeder.nock_enough_arrows.network;
 
-import com.itayfeder.nock_enough_arrows.compat.CuriosCompat;
+import com.itayfeder.nock_enough_arrows.compat.curios.CuriosCompat;
 import com.itayfeder.nock_enough_arrows.init.ItemInit;
 import com.itayfeder.nock_enough_arrows.quiver.QuiverItem;
 import com.itayfeder.nock_enough_arrows.quiver.QuiverItemStackHandler;
@@ -10,7 +10,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.network.NetworkEvent;
 
-import java.util.Optional;
 import java.util.function.Supplier;
 
 public class QuiverSwitchSelectionMessage {
