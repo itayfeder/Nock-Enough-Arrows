@@ -91,6 +91,7 @@ public class NockEnoughArrowsMod
         event.getGenericTrades().add(new PublicVillagerTrades.ItemsForEmeralds(ItemInit.GROWING_ARROW.get(), 6, 8, 8));
         event.getGenericTrades().add(new PublicVillagerTrades.ItemsForEmeralds(ItemInit.ETHEREAL_ARROW.get(), 6, 8, 8));
         event.getGenericTrades().add(new PublicVillagerTrades.ItemsForEmeralds(ItemInit.ECHOING_ARROW.get(), 6, 8, 8));
+        event.getGenericTrades().add(new PublicVillagerTrades.ItemsForEmeralds(ItemInit.CUPID_ARROW.get(), 6, 8, 8));
     }
 
     public static <T> void addMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder,

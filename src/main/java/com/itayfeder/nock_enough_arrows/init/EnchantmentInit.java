@@ -1,6 +1,7 @@
 package com.itayfeder.nock_enough_arrows.init;
 
 import com.itayfeder.nock_enough_arrows.NockEnoughArrowsMod;
+import com.itayfeder.nock_enough_arrows.enchantments.CycleEnchantment;
 import com.itayfeder.nock_enough_arrows.enchantments.RecoveryEnchantment;
 import com.itayfeder.nock_enough_arrows.enchantments.StockpileEnchantment;
 import com.itayfeder.nock_enough_arrows.quiver.QuiverItem;
@@ -17,6 +18,7 @@ public class EnchantmentInit {
 
     public static final RegistryObject<Enchantment> STOCKPILE = ENCHANTMENTS.register("stockpile", () -> new StockpileEnchantment(Enchantment.Rarity.UNCOMMON, QUIVER));
     public static final RegistryObject<Enchantment> RECOVERY = ENCHANTMENTS.register("recovery", () -> new RecoveryEnchantment(Enchantment.Rarity.RARE, QUIVER));
+    public static final RegistryObject<Enchantment> CYCLE = ENCHANTMENTS.register("cycle", () -> new CycleEnchantment(Enchantment.Rarity.RARE, QUIVER));
 
 
 }

@@ -37,6 +37,8 @@ public class ArcherRecipeProvider extends RecipeProvider {
         FletchingRecipeBuilder.build(Items.FEATHER, Items.STICK, Items.FIREWORK_ROCKET, ItemInit.PARTY_ARROW.get(), 2).unlockedByItem(Items.FIREWORK_ROCKET).save(p_176532_);
         FletchingRecipeBuilder.build(Items.FEATHER, Items.STICK, Items.POISONOUS_POTATO, ItemInit.REPULSIVE_ARROW.get(), 1).unlockedByItem(Items.POISONOUS_POTATO).save(p_176532_);
         //FletchingRecipeBuilder.build(Items.FEATHER, Items.STICK, Items.ECHO_SHARD, ItemInit.ECHOING_ARROW.get(), 2).unlockedByItem(Items.ECHO_SHARD).save(p_176532_);
+        FletchingRecipeBuilder.build(Items.FEATHER, Items.STICK, Items.ENDER_EYE, ItemInit.SEEKER_ARROW.get(), 2).unlockedByItem(Items.ENDER_EYE).save(p_176532_);
+        FletchingRecipeBuilder.build(Items.FEATHER, Items.STICK, Items.OBSIDIAN, ItemInit.REINFORCED_ARROW.get(), 4).unlockedByItem(Items.OBSIDIAN).save(p_176532_);
 
     }
 

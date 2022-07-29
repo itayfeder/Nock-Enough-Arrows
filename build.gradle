@@ -23,7 +23,7 @@ mixin {
     add sourceSets.main, "nock_enough_arrows.refmap.json"
 }
 
-version = '1.18.2-1.0.3'
+version = '1.18.2-1.0.4'
 group = 'com.itayfeder.nock_enough_arrows' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'nock_enough_arrows'
 
@@ -47,7 +47,7 @@ minecraft {
     // Simply re-run your setup task after changing the mappings to update your workspace.
     mappings channel: 'official', version: '1.18.2'
 
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.

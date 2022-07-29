@@ -2,6 +2,7 @@ package com.itayfeder.nock_enough_arrows.utils;
 
 import com.itayfeder.nock_enough_arrows.NockEnoughArrowsMod;
 import com.itayfeder.nock_enough_arrows.arrows.blossom.BlossomArrowRenderer;
+import com.itayfeder.nock_enough_arrows.arrows.cupid.CupidArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.dousing.DousingArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.drill.DrillArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.echoing.EchoingArrowRenderer;
@@ -15,7 +16,9 @@ import com.itayfeder.nock_enough_arrows.arrows.party.PartyArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.prismarine.PrismarineArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.pufferfish.PufferfishArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.redstone_torch.RedstoneTorchArrowRenderer;
+import com.itayfeder.nock_enough_arrows.arrows.reinforced.ReinforcedArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.repulsive.RepulsiveArrowRenderer;
+import com.itayfeder.nock_enough_arrows.arrows.seeker.SeekerArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.slime.SlimeArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.soul_torch.SoulTorchArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.split.SplitArrowRenderer;
@@ -59,6 +62,9 @@ public class ClientEventBusSubscriber {
         EntityRenderers.register(EntityTypeInit.PARTY_ARROW.get(), PartyArrowRenderer::new);
         EntityRenderers.register(EntityTypeInit.REPULSIVE_ARROW.get(), RepulsiveArrowRenderer::new);
         EntityRenderers.register(EntityTypeInit.ECHOING_ARROW.get(), EchoingArrowRenderer::new);
+        EntityRenderers.register(EntityTypeInit.SEEKER_ARROW.get(), SeekerArrowRenderer::new);
+        EntityRenderers.register(EntityTypeInit.CUPID_ARROW.get(), CupidArrowRenderer::new);
+        EntityRenderers.register(EntityTypeInit.REINFORCED_ARROW.get(), ReinforcedArrowRenderer::new);
 
         MenuScreens.register(MenuInit.FLETCHING_TABLE.get(), FletchingTableScreen::new);
 

@@ -24,6 +24,7 @@ public class ArcherItemTagsProvider extends ItemTagsProvider {
                 ItemInit.TORCH_ARROW.get(), ItemInit.SOUL_TORCH_ARROW.get(), ItemInit.REDSTONE_TORCH_ARROW.get(),
                 ItemInit.ETHEREAL_ARROW.get(), ItemInit.DOUSING_ARROW.get(), ItemInit.BLOSSOM_ARROW.get(),
                 ItemInit.GROWING_ARROW.get(), ItemInit.DRILL_ARROW.get(), ItemInit.SPLIT_ARROW.get(),
-                ItemInit.PARTY_ARROW.get(), ItemInit.REPULSIVE_ARROW.get(), ItemInit.ECHOING_ARROW.get());
+                ItemInit.PARTY_ARROW.get(), ItemInit.REPULSIVE_ARROW.get(), ItemInit.ECHOING_ARROW.get(),
+                ItemInit.SEEKER_ARROW.get(), ItemInit.CUPID_ARROW.get(), ItemInit.REINFORCED_ARROW.get());
     }
 }
