@@ -1,6 +1,7 @@
 package com.itayfeder.nock_enough_arrows.utils;
 
 import com.itayfeder.nock_enough_arrows.arrows.blossom.BlossomArrow;
+import com.itayfeder.nock_enough_arrows.arrows.cupid.CupidArrow;
 import com.itayfeder.nock_enough_arrows.arrows.dousing.DousingArrow;
 import com.itayfeder.nock_enough_arrows.arrows.drill.DrillArrow;
 import com.itayfeder.nock_enough_arrows.arrows.echoing.EchoingArrow;
@@ -14,7 +15,9 @@ import com.itayfeder.nock_enough_arrows.arrows.party.PartyArrow;
 import com.itayfeder.nock_enough_arrows.arrows.prismarine.PrismarineArrow;
 import com.itayfeder.nock_enough_arrows.arrows.pufferfish.PufferfishArrow;
 import com.itayfeder.nock_enough_arrows.arrows.redstone_torch.RedstoneTorchArrow;
+import com.itayfeder.nock_enough_arrows.arrows.reinforced.ReinforcedArrow;
 import com.itayfeder.nock_enough_arrows.arrows.repulsive.RepulsiveArrow;
+import com.itayfeder.nock_enough_arrows.arrows.seeker.SeekerArrow;
 import com.itayfeder.nock_enough_arrows.arrows.slime.SlimeArrow;
 import com.itayfeder.nock_enough_arrows.arrows.soul_torch.SoulTorchArrow;
 import com.itayfeder.nock_enough_arrows.arrows.split.SplitArrow;
@@ -167,6 +170,27 @@ public class DispenserRegistry {
         DispenserBlock.registerBehavior(ItemInit.ECHOING_ARROW.get(), new AbstractProjectileDispenseBehavior() {
             protected Projectile getProjectile(Level p_123456_, Position p_123457_, ItemStack p_123458_) {
                 AbstractArrow abstractarrow = new EchoingArrow(p_123456_, p_123457_.x(), p_123457_.y(), p_123457_.z());
+                abstractarrow.pickup = AbstractArrow.Pickup.ALLOWED;
+                return abstractarrow;
+            }
+        });
+        DispenserBlock.registerBehavior(ItemInit.SEEKER_ARROW.get(), new AbstractProjectileDispenseBehavior() {
+            protected Projectile getProjectile(Level p_123456_, Position p_123457_, ItemStack p_123458_) {
+                AbstractArrow abstractarrow = new SeekerArrow(p_123456_, p_123457_.x(), p_123457_.y(), p_123457_.z());
+                abstractarrow.pickup = AbstractArrow.Pickup.ALLOWED;
+                return abstractarrow;
+            }
+        });
+        DispenserBlock.registerBehavior(ItemInit.CUPID_ARROW.get(), new AbstractProjectileDispenseBehavior() {
+            protected Projectile getProjectile(Level p_123456_, Position p_123457_, ItemStack p_123458_) {
+                AbstractArrow abstractarrow = new CupidArrow(p_123456_, p_123457_.x(), p_123457_.y(), p_123457_.z());
+                abstractarrow.pickup = AbstractArrow.Pickup.ALLOWED;
+                return abstractarrow;
+            }
+        });
+        DispenserBlock.registerBehavior(ItemInit.REINFORCED_ARROW.get(), new AbstractProjectileDispenseBehavior() {
+            protected Projectile getProjectile(Level p_123456_, Position p_123457_, ItemStack p_123458_) {
+                AbstractArrow abstractarrow = new ReinforcedArrow(p_123456_, p_123457_.x(), p_123457_.y(), p_123457_.z());
                 abstractarrow.pickup = AbstractArrow.Pickup.ALLOWED;
                 return abstractarrow;
             }

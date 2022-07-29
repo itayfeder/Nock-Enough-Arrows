@@ -2,6 +2,7 @@ package com.itayfeder.nock_enough_arrows.init;
 
 import com.itayfeder.nock_enough_arrows.NockEnoughArrowsMod;
 import com.itayfeder.nock_enough_arrows.arrows.blossom.BlossomArrowItem;
+import com.itayfeder.nock_enough_arrows.arrows.cupid.CupidArrowItem;
 import com.itayfeder.nock_enough_arrows.arrows.dousing.DousingArrowItem;
 import com.itayfeder.nock_enough_arrows.arrows.drill.DrillArrowItem;
 import com.itayfeder.nock_enough_arrows.arrows.echoing.EchoingArrowItem;
@@ -15,7 +16,9 @@ import com.itayfeder.nock_enough_arrows.arrows.party.PartyArrowItem;
 import com.itayfeder.nock_enough_arrows.arrows.prismarine.PrismarineArrowItem;
 import com.itayfeder.nock_enough_arrows.arrows.pufferfish.PufferfishArrowItem;
 import com.itayfeder.nock_enough_arrows.arrows.redstone_torch.RedstoneTorchArrowItem;
+import com.itayfeder.nock_enough_arrows.arrows.reinforced.ReinforcedArrowItem;
 import com.itayfeder.nock_enough_arrows.arrows.repulsive.RepulsiveArrowItem;
+import com.itayfeder.nock_enough_arrows.arrows.seeker.SeekerArrowItem;
 import com.itayfeder.nock_enough_arrows.arrows.slime.SlimeArrowItem;
 import com.itayfeder.nock_enough_arrows.arrows.soul_torch.SoulTorchArrowItem;
 import com.itayfeder.nock_enough_arrows.arrows.split.SplitArrowItem;
@@ -44,8 +47,9 @@ public class ItemInit {
         @Override
         public void fillItemList(NonNullList<ItemStack> p_40778_) {
             super.fillItemList(p_40778_);
-            p_40778_.add(EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentInit.STOCKPILE.get(), 4)));
-            p_40778_.add(EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentInit.RECOVERY.get(), 3)));
+            p_40778_.add(EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentInit.STOCKPILE.get(), EnchantmentInit.STOCKPILE.get().getMaxLevel())));
+            p_40778_.add(EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentInit.RECOVERY.get(), EnchantmentInit.RECOVERY.get().getMaxLevel())));
+            p_40778_.add(EnchantedBookItem.createForEnchantment(new EnchantmentInstance(EnchantmentInit.CYCLE.get(), EnchantmentInit.CYCLE.get().getMaxLevel())));
 
         }
     };
@@ -72,5 +76,8 @@ public class ItemInit {
     public static final RegistryObject<Item> PARTY_ARROW = ITEMS.register("party_arrow", () -> new PartyArrowItem((new Item.Properties()).tab(TAB)));
     public static final RegistryObject<Item> REPULSIVE_ARROW = ITEMS.register("repulsive_arrow", () -> new RepulsiveArrowItem((new Item.Properties()).tab(TAB)));
     public static final RegistryObject<Item> ECHOING_ARROW = ITEMS.register("echoing_arrow", () -> new EchoingArrowItem((new Item.Properties()).tab(TAB)));
+    public static final RegistryObject<Item> SEEKER_ARROW = ITEMS.register("seeker_arrow", () -> new SeekerArrowItem((new Item.Properties()).tab(TAB)));
+    public static final RegistryObject<Item> CUPID_ARROW = ITEMS.register("cupid_arrow", () -> new CupidArrowItem((new Item.Properties()).tab(TAB)));
+    public static final RegistryObject<Item> REINFORCED_ARROW = ITEMS.register("reinforced_arrow", () -> new ReinforcedArrowItem((new Item.Properties()).tab(TAB)));
 
 }

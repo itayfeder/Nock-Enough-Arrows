@@ -2,6 +2,7 @@ package com.itayfeder.nock_enough_arrows.utils;
 
 import com.itayfeder.nock_enough_arrows.NockEnoughArrowsMod;
 import com.itayfeder.nock_enough_arrows.arrows.blossom.BlossomArrowRenderer;
+import com.itayfeder.nock_enough_arrows.arrows.cupid.CupidArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.dousing.DousingArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.drill.DrillArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.echoing.EchoingArrowRenderer;
@@ -15,7 +16,9 @@ import com.itayfeder.nock_enough_arrows.arrows.party.PartyArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.prismarine.PrismarineArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.pufferfish.PufferfishArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.redstone_torch.RedstoneTorchArrowRenderer;
+import com.itayfeder.nock_enough_arrows.arrows.reinforced.ReinforcedArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.repulsive.RepulsiveArrowRenderer;
+import com.itayfeder.nock_enough_arrows.arrows.seeker.SeekerArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.slime.SlimeArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.soul_torch.SoulTorchArrowRenderer;
 import com.itayfeder.nock_enough_arrows.arrows.split.SplitArrowRenderer;
@@ -23,31 +26,16 @@ import com.itayfeder.nock_enough_arrows.arrows.teleportation.TeleportationArrowR
 import com.itayfeder.nock_enough_arrows.arrows.torch.TorchArrowRenderer;
 import com.itayfeder.nock_enough_arrows.fletching_table.FletchingTableScreen;
 import com.itayfeder.nock_enough_arrows.init.EntityTypeInit;
-import com.itayfeder.nock_enough_arrows.init.ItemInit;
-import com.itayfeder.nock_enough_arrows.init.KeybindInit;
 import com.itayfeder.nock_enough_arrows.init.MenuInit;
-import com.itayfeder.nock_enough_arrows.quiver.QuiverItem;
-import com.itayfeder.nock_enough_arrows.quiver.QuiverItemStackHandler;
 import com.itayfeder.nock_enough_arrows.quiver.tooltip.ClientQuiverTooltip;
 import com.itayfeder.nock_enough_arrows.quiver.tooltip.QuiverTooltip;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.commons.lang3.tuple.ImmutableTriple;
-import top.theillusivec4.curios.api.CuriosApi;
-
-import java.util.Optional;
 
 @Mod.EventBusSubscriber(modid = NockEnoughArrowsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEventBusSubscriber {
@@ -73,6 +61,9 @@ public class ClientEventBusSubscriber {
         EntityRenderers.register(EntityTypeInit.PARTY_ARROW.get(), PartyArrowRenderer::new);
         EntityRenderers.register(EntityTypeInit.REPULSIVE_ARROW.get(), RepulsiveArrowRenderer::new);
         EntityRenderers.register(EntityTypeInit.ECHOING_ARROW.get(), EchoingArrowRenderer::new);
+        EntityRenderers.register(EntityTypeInit.SEEKER_ARROW.get(), SeekerArrowRenderer::new);
+        EntityRenderers.register(EntityTypeInit.CUPID_ARROW.get(), CupidArrowRenderer::new);
+        EntityRenderers.register(EntityTypeInit.REINFORCED_ARROW.get(), ReinforcedArrowRenderer::new);
 
         MenuScreens.register(MenuInit.FLETCHING_TABLE.get(), FletchingTableScreen::new);
     }

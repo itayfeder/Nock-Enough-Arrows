@@ -1,0 +1,21 @@
+{ 
+	"type": "apotheosis:fletching", 
+	"conditions": [{
+		"type": "apotheosis:module",
+		"module": "village"
+	}], 
+	"ingredients": [{ 
+			"item": "minecraft:ender_eye"
+		}, 
+		{ 
+			"item": "minecraft:stick" 
+		}, 
+		{ 
+			"item": "minecraft:feather" 
+		} 
+	], 
+	"result": { 
+		"item": "nock_enough_arrows:seeker_arrow",
+		"count": 2 
+	} 
+}

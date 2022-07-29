@@ -26,6 +26,9 @@
   "item.nock_enough_arrows.party_arrow": "Party Arrow",
   "item.nock_enough_arrows.repulsive_arrow": "Repulsive Arrow",
   "item.nock_enough_arrows.echoing_arrow": "Echoing Arrow",
+  "item.nock_enough_arrows.seeker_arrow": "Seeker Arrow",
+  "item.nock_enough_arrows.cupid_arrow": "Cupid Arrow",
+  "item.nock_enough_arrows.reinforced_arrow": "Reinforced Arrow",
 
   "entity.nock_enough_arrows.pufferfish_arrow": "Pufferfish Arrow",
   "entity.nock_enough_arrows.explosive_arrow": "Explosive Arrow",
@@ -47,9 +50,16 @@
   "entity.nock_enough_arrows.party_arrow": "Party Arrow",
   "entity.nock_enough_arrows.repulsive_arrow": "Repulsive Arrow",
   "entity.nock_enough_arrows.echoing_arrow": "Echoing Arrow",
+  "entity.nock_enough_arrows.seeker_arrow": "Seeker Arrow",
+  "entity.nock_enough_arrows.cupid_arrow": "Cupid Arrow",
+  "entity.nock_enough_arrows.reinforced_arrow": "Reinforced Arrow",
 
   "enchantment.nock_enough_arrows.stockpile": "Stockpile",
+  "enchantment.nock_enough_arrows.stockpile.desc": "Increases the size of the quiver",
   "enchantment.nock_enough_arrows.recovery": "Recovery",
+  "enchantment.nock_enough_arrows.recovery.desc": "Has a chance to not waste an arrow fired from the quiver",
+  "enchantment.nock_enough_arrows.cycle": "Cycle",
+  "enchantment.nock_enough_arrows.cycle.desc": "When firing, the quiver will cycle to the next arrow",
 
   "advancements.fletching.root.title": "Nock Enough Arrows",
   "advancements.fletching.root.description": "Steady Hands...",
@@ -94,5 +104,11 @@
   "advancements.fletching.repulsive_arrow.title": "Eww.. Disgusting",
   "advancements.fletching.repulsive_arrow.description": "Fletch a Repulsive Arrow",
   "advancements.fletching.echoing_arrow.title": "Revealing Area",
-  "advancements.fletching.echoing_arrow.description": "Fletch an Echoing Arrow"
+  "advancements.fletching.echoing_arrow.description": "Fletch an Echoing Arrow",
+  "advancements.fletching.seeker_arrow.title": "I'll be Watching You...",
+  "advancements.fletching.seeker_arrow.description": "Fletch a Seeker Arrow",
+  "advancements.fletching.cupid_arrow.title": "Match Made in Aether!",
+  "advancements.fletching.cupid_arrow.description": "Fletch a Cupid Arrow",
+  "advancements.fletching.reinforced_arrow.title": "Call the Reinforcements!",
+  "advancements.fletching.reinforced_arrow.description": "Fletch a Reinforced Arrow"
 }

@@ -76,7 +76,7 @@ public class PartyArrow extends AbstractArrow {
         compoundtag.put("Explosions", listtag);
 
         FireworkRocketEntity fireworkrocketentity = new FireworkRocketEntity(level, this.getOwner(), this.getX(), this.getY(), this.getZ(), fireworkStack);
-        ObfuscationReflectionHelper.setPrivateValue(FireworkRocketEntity.class, fireworkrocketentity, 0, "lifetime");
+        fireworkrocketentity.lifetime = 0;
 
         level.addFreshEntity(fireworkrocketentity);
         this.discard();

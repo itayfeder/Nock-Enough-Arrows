@@ -1,7 +1,9 @@
 package com.itayfeder.nock_enough_arrows.mixin;
 
+import com.itayfeder.nock_enough_arrows.NockEnoughArrowsMod;
 import com.itayfeder.nock_enough_arrows.compat.curios.CuriosCompat;
 import com.itayfeder.nock_enough_arrows.init.EnchantmentInit;
+import com.itayfeder.nock_enough_arrows.network.QuiverSwitchSelectionMessage;
 import com.itayfeder.nock_enough_arrows.quiver.QuiverItem;
 import com.itayfeder.nock_enough_arrows.quiver.QuiverItemStackHandler;
 import net.minecraft.core.BlockPos;
@@ -48,6 +50,7 @@ public abstract class PlayerMixin extends LivingEntity {
                 ItemStack ist = quiverItemStackHandler.getStackInSlot(selectedSlot);
                 int recoveryLevel = itemstack1.getEnchantmentLevel(EnchantmentInit.RECOVERY.get());
                 Random rnd = new Random();
+
                 if (rnd.nextInt(100) < recoveryLevel * 5) {
                     cir.setReturnValue(ist.copy());
                 }

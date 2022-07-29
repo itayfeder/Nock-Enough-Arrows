@@ -2,6 +2,7 @@ package com.itayfeder.nock_enough_arrows.init;
 
 import com.itayfeder.nock_enough_arrows.NockEnoughArrowsMod;
 import com.itayfeder.nock_enough_arrows.arrows.blossom.BlossomArrow;
+import com.itayfeder.nock_enough_arrows.arrows.cupid.CupidArrow;
 import com.itayfeder.nock_enough_arrows.arrows.dousing.DousingArrow;
 import com.itayfeder.nock_enough_arrows.arrows.drill.DrillArrow;
 import com.itayfeder.nock_enough_arrows.arrows.echoing.EchoingArrow;
@@ -15,7 +16,9 @@ import com.itayfeder.nock_enough_arrows.arrows.party.PartyArrow;
 import com.itayfeder.nock_enough_arrows.arrows.prismarine.PrismarineArrow;
 import com.itayfeder.nock_enough_arrows.arrows.pufferfish.PufferfishArrow;
 import com.itayfeder.nock_enough_arrows.arrows.redstone_torch.RedstoneTorchArrow;
+import com.itayfeder.nock_enough_arrows.arrows.reinforced.ReinforcedArrow;
 import com.itayfeder.nock_enough_arrows.arrows.repulsive.RepulsiveArrow;
+import com.itayfeder.nock_enough_arrows.arrows.seeker.SeekerArrow;
 import com.itayfeder.nock_enough_arrows.arrows.slime.SlimeArrow;
 import com.itayfeder.nock_enough_arrows.arrows.soul_torch.SoulTorchArrow;
 import com.itayfeder.nock_enough_arrows.arrows.split.SplitArrow;
@@ -130,4 +133,19 @@ public class EntityTypeInit {
             () -> EntityType.Builder.<EchoingArrow>of(EchoingArrow::new, MobCategory.MISC)
                     .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).setCustomClientFactory(EchoingArrow::new)
                     .build(new ResourceLocation(NockEnoughArrowsMod.MOD_ID, "echoing_arrow").toString()));
+
+    public static final RegistryObject<EntityType<SeekerArrow>> SEEKER_ARROW = ENTITY_TYPES.register("seeker_arrow",
+            () -> EntityType.Builder.<SeekerArrow>of(SeekerArrow::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).setCustomClientFactory(SeekerArrow::new)
+                    .build(new ResourceLocation(NockEnoughArrowsMod.MOD_ID, "seeker_arrow").toString()));
+
+    public static final RegistryObject<EntityType<CupidArrow>> CUPID_ARROW = ENTITY_TYPES.register("cupid_arrow",
+            () -> EntityType.Builder.<CupidArrow>of(CupidArrow::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).setCustomClientFactory(CupidArrow::new)
+                    .build(new ResourceLocation(NockEnoughArrowsMod.MOD_ID, "cupid_arrow").toString()));
+
+    public static final RegistryObject<EntityType<ReinforcedArrow>> REINFORCED_ARROW = ENTITY_TYPES.register("reinforced_arrow",
+            () -> EntityType.Builder.<ReinforcedArrow>of(ReinforcedArrow::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).setCustomClientFactory(ReinforcedArrow::new)
+                    .build(new ResourceLocation(NockEnoughArrowsMod.MOD_ID, "reinforced_arrow").toString()));
 }

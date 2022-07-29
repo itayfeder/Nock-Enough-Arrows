@@ -19,6 +19,9 @@
     "nock_enough_arrows:split_arrow",
     "nock_enough_arrows:party_arrow",
     "nock_enough_arrows:repulsive_arrow",
-    "nock_enough_arrows:echoing_arrow"
+    "nock_enough_arrows:echoing_arrow",
+    "nock_enough_arrows:seeker_arrow",
+    "nock_enough_arrows:cupid_arrow",
+    "nock_enough_arrows:reinforced_arrow"
   ]
 }

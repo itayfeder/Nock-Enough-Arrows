@@ -1,0 +1,16 @@
+{
+  "type": "nock_enough_arrows:fletching",
+  "arrowhead": {
+    "item": "minecraft:obsidian"
+  },
+  "fletching": {
+    "item": "minecraft:feather"
+  },
+  "result": {
+    "count": 4,
+    "item": "nock_enough_arrows:reinforced_arrow"
+  },
+  "shaft": {
+    "item": "minecraft:stick"
+  }
+}

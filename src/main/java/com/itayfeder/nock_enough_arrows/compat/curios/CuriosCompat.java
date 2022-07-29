@@ -1,7 +1,9 @@
 package com.itayfeder.nock_enough_arrows.compat.curios;
 
+import com.itayfeder.nock_enough_arrows.NockEnoughArrowsMod;
 import com.itayfeder.nock_enough_arrows.init.EnchantmentInit;
 import com.itayfeder.nock_enough_arrows.init.ItemInit;
+import com.itayfeder.nock_enough_arrows.network.QuiverSwitchSelectionMessage;
 import com.itayfeder.nock_enough_arrows.quiver.QuiverItem;
 import com.itayfeder.nock_enough_arrows.quiver.QuiverItemStackHandler;
 import net.minecraft.nbt.CompoundTag;
@@ -38,7 +40,9 @@ public class CuriosCompat {
                     ItemStack ist = quiverItemStackHandler.getStackInSlot(selectedSlot);
                     int recoveryLevel = itemstack1.getEnchantmentLevel(EnchantmentInit.RECOVERY.get());
                     Random rnd = new Random();
+
                     if (rnd.nextInt(100) < recoveryLevel * 5) {
+
                         cir.setReturnValue(ist.copy());
                     }
                     else {
